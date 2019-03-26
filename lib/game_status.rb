@@ -15,17 +15,10 @@ WIN_COMBINATIONS = [
   [2,4,6]  # top-right to bottom-left diagonal
 ]
 
-def won?(board)
-  WIN_COMBINATIONS.each do |win_combination|
-    win_combination.each do |win|
-      if win == ["X", "X", "X"] || win == ["O", "O", "O"]
-        return win
-      else
-        return false
-      end
-    end
-  end
-end
+def won?(board) 
+  WIN_COMBINATIONS.each do |wincombo| 
+    if (board[wincombo[0]]) == "X" && (board[wincombo[1]]) == "X" && (board[wincombo[2]]) == "X" return wincombo 
+    elsif (board[wincombo[0]]) == "O" && (board[wincombo[1]]) == "O" && (board[wincombo[2]]) == "O" return wincombo end end false end
 
 def full?(board)
   board.all? { |element| element != " " }
