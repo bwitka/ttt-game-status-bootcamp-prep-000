@@ -43,7 +43,7 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board) == ["X", "X", "X"]
+  if won?(board).count("X") == 3
     return "X"
   elsif  won?(board) == ["O", "O", "O"]
     return "O"
